@@ -23,7 +23,7 @@ export interface BingoGameActions {
 }
 
 const STORAGE_KEY = 'bingo-game-state';
-const STORAGE_VERSION = 1;
+const STORAGE_VERSION = 2;
 
 interface StoredGameData {
   version: number;
@@ -73,7 +73,7 @@ function validateStoredData(data: unknown): data is StoredGameData {
     const line = obj.winningLine as Record<string, unknown>;
     if (
       typeof line.type !== 'string' ||
-      !['row', 'column', 'diagonal'].includes(line.type) ||
+      !['row', 'column', 'diagonal', 'corners'].includes(line.type) ||
       typeof line.index !== 'number' ||
       !Array.isArray(line.squares)
     ) {

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "./.github/hooks/tdd-green-stop.sh",
+        "windows": "pwsh -NoProfile -ExecutionPolicy Bypass -File \".github/hooks/tdd-green-stop.ps1\"",
+        "linux": "bash ./.github/hooks/tdd-green-stop.sh",
+        "osx": "bash ./.github/hooks/tdd-green-stop.sh",
+        "timeout": 120
+      }
+    ]
+  }
+}
