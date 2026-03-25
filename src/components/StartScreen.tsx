@@ -4,25 +4,34 @@ interface StartScreenProps {
 
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-      <div className="text-center max-w-sm">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Bingo Mixer</h1>
-        <p className="text-lg text-gray-600 mb-8">Find your people!</p>
-        
-        <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-          <h2 className="font-semibold text-gray-800 mb-3">How to play</h2>
-          <ul className="text-left text-gray-600 text-sm space-y-2">
-            <li>• Find people who match the questions</li>
-            <li>• Tap a square when you find a match</li>
-            <li>• Get 5 in a row to win!</li>
+    <div className="relative flex min-h-full items-center justify-center overflow-hidden px-6 py-10">
+      <div className="absolute inset-0 bg-gradient-to-br from-white/55 via-transparent to-accent/8" />
+
+      <div className="relative w-full max-w-md text-center animate-[fadeIn_650ms_ease-out]">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.34em] text-accent/80 animate-[slideUp_650ms_ease-out_120ms_both]">
+          Harbor Social Series
+        </p>
+        <h1 className="mb-2 font-display text-5xl leading-none text-ink animate-[slideUp_650ms_ease-out_200ms_both] sm:text-6xl">
+          Yacht Club Mixer
+        </h1>
+        <p className="mx-auto mb-8 max-w-xs text-sm font-medium text-muted animate-[slideUp_650ms_ease-out_280ms_both] sm:text-base">
+          Trade stories, find your crew, and claim your line before the bell.
+        </p>
+
+        <div className="mb-8 rounded-2xl border border-accent/20 bg-surface/90 p-6 text-left shadow-[0_20px_45px_-28px_rgb(18,38,58,0.75)] backdrop-blur-sm animate-[slideUp_650ms_ease-out_360ms_both]">
+          <h2 className="mb-3 font-display text-2xl text-ink">Deck Rules</h2>
+          <ul className="space-y-2 text-sm leading-relaxed text-muted">
+            <li>• Meet someone who fits a square and mark it.</li>
+            <li>• Keep moving, every chat can unlock your board.</li>
+            <li>• First five in a line earns bragging rights.</li>
           </ul>
         </div>
 
         <button
           onClick={onStart}
-          className="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors"
+          className="w-full rounded-xl bg-accent px-8 py-4 text-base font-semibold tracking-wide text-white shadow-[0_16px_30px_-16px_rgb(13,79,115,0.95)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-light active:translate-y-0 active:bg-accent-light animate-[slideUp_650ms_ease-out_440ms_both] sm:text-lg"
         >
-          Start Game
+          Board the Mixer
         </button>
       </div>
     </div>

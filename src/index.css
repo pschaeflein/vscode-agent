@@ -1,11 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #3b82f6;
-  --color-marked: #dcfce7;
-  --color-marked-border: #22c55e;
-  --color-bingo: #fbbf24;
+  --color-accent: #0d4f73;
+  --color-accent-light: #156992;
+  --color-surface: #fbf7ef;
+  --color-surface-strong: #f1e8d6;
+  --color-ink: #12263a;
+  --color-muted: #5a6f80;
+  --color-marked: #d5edf3;
+  --color-marked-border: #2f7f9f;
+  --color-winning: #f0d58a;
+  --color-winning-border: #ad8734;
+  --color-bingo: #ad8734;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
 }
 
 html,
@@ -16,6 +25,64 @@ body,
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background:
+    radial-gradient(circle at 15% 18%, rgb(255 255 255 / 58%) 0%, transparent 34%),
+    radial-gradient(circle at 88% 12%, rgb(13 79 115 / 10%) 0%, transparent 28%),
+    linear-gradient(140deg, #e7f1f6 0%, #f9f5ea 52%, #efe4cc 100%);
   -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+#root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0%) 0%,
+    rgb(255 255 255 / 0%) 93%,
+    rgb(18 38 58 / 16%) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes modalDock {
+  from {
+    transform: translateY(20px) scale(0.98);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }

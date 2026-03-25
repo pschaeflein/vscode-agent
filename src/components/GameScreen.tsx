@@ -17,33 +17,33 @@ export function GameScreen({
   onReset,
 }: GameScreenProps) {
   return (
-    <div className="flex flex-col min-h-full bg-gray-50">
+    <div className="flex min-h-full flex-col px-4 pb-6 pt-4 sm:px-6">
       {/* Header */}
-      <header className="flex items-center justify-between p-3 bg-white border-b border-gray-200">
+      <header className="mx-auto flex w-full max-w-3xl items-center justify-between rounded-2xl border border-accent/20 bg-surface/88 px-3 py-2 shadow-[0_20px_45px_-34px_rgb(18,38,58,0.9)] backdrop-blur-sm sm:px-4">
         <button
           onClick={onReset}
-          className="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100"
+          className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:bg-accent/10 active:bg-accent/15"
         >
-          ← Back
+          Port
         </button>
-        <h1 className="font-bold text-gray-900">Bingo Mixer</h1>
-        <div className="w-16"></div>
+        <h1 className="font-display text-2xl tracking-wide text-ink sm:text-3xl">Yacht Club Bingo</h1>
+        <div className="w-14 text-right text-[10px] font-semibold uppercase tracking-[0.24em] text-accent/65 sm:w-16">Deck</div>
       </header>
 
       {/* Instructions */}
-      <p className="text-center text-gray-500 text-sm py-2 px-4">
-        Tap a square when you find someone who matches it.
+      <p className="mx-auto w-full max-w-xl py-3 text-center text-xs font-medium uppercase tracking-[0.2em] text-muted sm:text-sm">
+        Mark a square each time you find someone who fits it.
       </p>
 
       {/* Bingo indicator */}
       {hasBingo && (
-        <div className="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
-          🎉 BINGO! You got a line!
+        <div className="mx-auto mb-3 w-full max-w-xl rounded-xl border border-winning-border/45 bg-winning/60 py-2 text-center text-sm font-semibold tracking-wide text-[#6f531b] animate-[fadeIn_420ms_ease-out]">
+          Signal fired. Your crew just made a line.
         </div>
       )}
 
       {/* Board */}
-      <div className="flex-1 flex items-center justify-center p-3">
+      <div className="flex flex-1 items-center justify-center pt-1">
         <BingoBoard
           board={board}
           winningSquareIds={winningSquareIds}

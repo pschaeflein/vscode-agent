@@ -4,17 +4,17 @@ interface BingoModalProps {
 
 export function BingoModal({ onDismiss }: BingoModalProps) {
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div className="text-5xl mb-4">🎉</div>
-        <h2 className="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p className="text-gray-600 mb-6">You completed a line!</p>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#061522]/55 p-4 backdrop-blur-[2px]">
+      <div className="w-full max-w-sm rounded-2xl border border-accent/30 bg-surface p-6 text-center shadow-[0_34px_70px_-36px_rgb(6,21,34,0.95)] animate-[modalDock_520ms_cubic-bezier(0.2,0.8,0.2,1)]">
+        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-accent/70">Signal Confirmed</p>
+        <h2 className="mb-2 font-display text-5xl leading-none text-bingo">Bingo</h2>
+        <p className="mb-6 text-sm font-medium text-muted">Your line is locked in. Keep mingling and fill the deck.</p>
         
         <button
           onClick={onDismiss}
-          className="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors"
+          className="w-full rounded-xl bg-accent px-6 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-accent-light active:bg-accent-light"
         >
-          Keep Playing
+          Return to Deck
         </button>
       </div>
     </div>
